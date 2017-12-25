@@ -7,7 +7,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'com.android.tools.build:gradle:3.0.1'
     }
 }
 
@@ -20,15 +20,19 @@ repositories {
 android {
 
     project.ext {
-        appcompat='com.android.support:appcompat-v7:25.2.0'
+        appcompat='com.android.support:appcompat-v7:27.0.2'
     }
 
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '26.0.3'
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 25
+        minSdkVersion 14
+        targetSdkVersion 27
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
     }
 
     buildTypes {
@@ -41,7 +45,7 @@ android {
     dependencies {
         compile project.ext.appcompat
     }
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '26.0.3'
 }
 
 
@@ -56,8 +60,8 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.turasa:signal-service-java:2.6.5_unofficial_1'
-    compile 'org.bouncycastle:bcprov-jdk15on:1.57'
-    compile 'net.sourceforge.argparse4j:argparse4j:0.7.0'
+    compile 'com.github.turasa:signal-service-java:2.6.11_unofficial_1'
+    compile 'org.bouncycastle:bcprov-jdk15on:1.58'
+    compile 'net.sourceforge.argparse4j:argparse4j:0.8.1'
 }
 
